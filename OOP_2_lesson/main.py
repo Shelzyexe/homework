@@ -45,38 +45,75 @@ print(doc1.view_document())
 print(doc2.edit_document())
 
 
-# 3
-# # Створіть ієрархію класів із використанням множинного успадкування.
-# # Виведіть на екран порядок вирішення методів для кожного класу. Поясніть, чому лінеаризація даних класів виглядає саме так.
+3
+# Створіть ієрархію класів із використанням множинного успадкування.
+# Виведіть на екран порядок вирішення методів для кожного класу. Поясніть, чому лінеаризація даних класів виглядає саме так.
 
-# class MobilePhone:
-#     def __init__(self,name_phone:str, model: str, cameras_pixels: int, screen_size: int, color: str, battery_size: int):
-#         self.cameras_pixels = cameras_pixels
-#         self.screen_size = screen_size
-#         self.color = color
-#         self.battery_size = battery_size
-#         self.model = model
-#         self.name_phone = name_phone
 
-#     def info_about_phone(self):
-#         print(f"Name of the phone : {self.name_phone}"
-#               f"Cameras pixels in phone : {self.cameras_pixels}"
-#               f"Screen size : {self.screen_size}"
-#               f"Color of the phone : {self.color}"
-#               f"Battery size : {self.battery_size}")
+class MobilePhone:
+    def __init__(self, name_phone: str, model: str, cameras_pixels: int, screen_size: int, color: str, battery_size: int):
+        self.cameras_pixels = cameras_pixels
+        self.screen_size = screen_size
+        self.color = color
+        self.battery_size = battery_size
+        self.model = model
+        self.name_phone = name_phone
 
-# class Iphone(MobilePhone):
-#     def __init__(self, name_phone, model, cameras_pixels, screen_size, color, battery_size, ios_version: int):
-#         super().__init__(name_phone, model, cameras_pixels, screen_size, color, battery_size)
-#         self.ios_version = ios_version
+    def info_about_phone(self):
+        print(f"Name of the phone : {self.name_phone}"
+              f"Cameras pixels in phone : {self.cameras_pixels}"
+              f"Screen size : {self.screen_size}"
+              f"Color of the phone : {self.color}"
+              f"Battery size : {self.battery_size}")
 
-#     def info_about_phone(self):
-#         print(f"Name of the phone : {self.name_phone}"
-#             f"Cameras pixels in phone : {self.cameras_pixels}"
-#             f"Screen size : {self.screen_size}"
-#             f"Color of the phone : {self.color}"
-#             f"Battery size : {self.battery_size}"
-#             f"Ios version : {self.ios_version}")
+
+class Iphone(MobilePhone):
+    def __init__(self, name_phone, model, cameras_pixels, screen_size, color, battery_size, ios_version: int):
+        super().__init__(name_phone, model, cameras_pixels, screen_size, color, battery_size)
+        self.ios_version = ios_version
+
+    def info_about_phone(self):
+        print(f"Name of the phone : {self.name_phone}"
+              f"Cameras pixels in phone : {self.cameras_pixels}"
+              f"Screen size : {self.screen_size}"
+              f"Color of the phone : {self.color}"
+              f"Battery size : {self.battery_size}"
+              f"Ios version : {self.ios_version}")
+
+
+phone1 = MobilePhone(
+    name_phone="Samsung Galaxy",
+    model="S21",
+    cameras_pixels=108,
+    screen_size=6,
+    color="Black",
+    battery_size=4000
+)
+phone1.info_about_phone()
+print()
+
+iphone1 = Iphone(
+    name_phone="iPhone",
+    model="13 Pro",
+    cameras_pixels=12,
+    screen_size=6,
+    color="Silver",
+    battery_size=3095,
+    ios_version=15
+)
+iphone1.info_about_phone()
+print()
+
+iphone2 = Iphone(
+    name_phone="iPhone",
+    model="14",
+    cameras_pixels=48,
+    screen_size=6,
+    color="Red",
+    battery_size=3279,
+    ios_version=16
+)
+iphone2.info_about_phone()
 
 
 7
